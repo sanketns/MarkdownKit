@@ -140,6 +140,8 @@ open class MarkdownParser {
                                   range: NSRange(location: 0, length: attributedString.length))
     attributedString.addAttribute(.foregroundColor, value: color,
                                   range: NSRange(location: 0, length: attributedString.length))
+      attributedString.removeAttribute(NSAttributedString.Key.strikethroughStyle, range: NSMakeRange(0, attributedString.length))
+      attributedString.removeAttribute(NSAttributedString.Key.strikethroughColor, range: NSMakeRange(0, attributedString.length))
     var elements: [MarkdownElement] = escapingElements
     elements.append(contentsOf: defaultElements)
     elements.append(contentsOf: customElements)
