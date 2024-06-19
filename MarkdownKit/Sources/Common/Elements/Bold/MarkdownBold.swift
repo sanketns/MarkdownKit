@@ -9,7 +9,7 @@ import Foundation
 
 open class MarkdownBold: MarkdownCommonElement {
   
-  fileprivate static let regex = "(.?|^)(\\*|_)(?=\\S)(.+?)(?<=\\S)(\\2)"
+  fileprivate static let regex = "(.?|^)(\\*)(?=\\S)(.+?)(?<=\\S)(\\*)"
 
   open var font: MarkdownFont?
   open var color: MarkdownColor?
@@ -46,3 +46,4 @@ open class MarkdownBold: MarkdownCommonElement {
     attributedString.deleteCharacters(in: match.range(at: 2))
   }
 }
+
