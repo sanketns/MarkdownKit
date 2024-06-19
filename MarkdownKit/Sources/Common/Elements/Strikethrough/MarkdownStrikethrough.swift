@@ -8,7 +8,8 @@
 import Foundation
 
 open class MarkdownStrikethrough: MarkdownCommonElement {
-  fileprivate static let regex = "(.?|^)(\\~\\~)(?=\\S)(.+?)(?<=\\S)(\\2)"
+  
+  fileprivate static let regex = "(.?|^)(~)(?=\\S)(.+?)(?<=\\S)(\\2)"
   
   open var font: MarkdownFont?
   open var color: MarkdownColor?
@@ -27,10 +28,11 @@ open class MarkdownStrikethrough: MarkdownCommonElement {
 
     attributedString.addAttribute(
       NSAttributedString.Key.strikethroughStyle,
-      value: NSNumber.init(value: NSUnderlineStyle.single.rawValue),
+      value: NSNumber(value: NSUnderlineStyle.single.rawValue),
       range: match.range(at: 3)
     )
 
     attributedString.deleteCharacters(in: match.range(at: 2))
   }
 }
+
