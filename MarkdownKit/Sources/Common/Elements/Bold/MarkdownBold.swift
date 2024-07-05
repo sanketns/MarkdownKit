@@ -9,7 +9,7 @@ import Foundation
 
 open class MarkdownBold: MarkdownCommonElement {
   
-  fileprivate static let regex = "(.?|^)(\\*)(?=\\S)(.+?)(?<=\\S)(\\*)"
+  fileprivate static let regex = "(.?|^)(\\*)(\\s*\\S.*?\\S\\s*)(\\*)"
 
   open var font: MarkdownFont?
   open var color: MarkdownColor?
